@@ -1,0 +1,24 @@
+<h1>Student Data</h1>
+<table class="table table-striped" *ngIf="student.length > 0; else elseBlock">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Class</th>
+        <th scope="col">Subject</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stud of student" >
+        <td>{{stud.name}}</td>
+        <td>{{stud.age}}</td>
+        <td>{{stud.standard}}</td>
+        <td>{{stud.subject}}</td>
+        <td> <button class="btn btn-sm btn-primary" (click) = "onEdit(stud.id)">Edit</button></td>
+        <td> <button class="btn btn-sm btn-danger" (click) = "onDelete(stud.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #elseBlock><h5>Add Student Data</h5></ng-template>
